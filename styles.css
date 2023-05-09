@@ -222,15 +222,42 @@ li p{
     border: none;
     cursor: pointer;
 }
-
-@media (max-width: 790px){
-    body{
-        padding-left: 0;
-    }
-    .topic-sidebar{
+@media (max-width: 540px){
+   nav ul{
         display: none;
     }
-    .float-img{
-        width: 55%;
+    #img{
+        width: 92%;
+        margin: 0;
+    }
+    #content{
+        padding: 15px;
+        font-size: 16px;
+    }
+    #content-title{
+        font-size: 20px;
+    }
+    .subtitle{
+        font-size: 17px;
+    }
+    .text-img-container{
+        flex-direction: column;
+        border: none;
+        padding: 10px;
+        margin: 0;
+    }
+    .small-img-container{
+        width: 100%;
+    }
+    .text-img-container img{
+        margin: 0;
+        min-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .sub-content-title{
+        width: 100%;
+        display: block;
+        text-indent: 10px;
     }
 }
