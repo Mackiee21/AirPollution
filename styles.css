@@ -261,3 +261,14 @@ li p{
         text-indent: 10px;
     }
 }
+@media (max-width: 790px){
+    body{
+        padding-left: 0;
+    }
+    .topic-sidebar{
+        display: none;
+    }
+    .float-img{
+        width: 55%;
+    }
+}
