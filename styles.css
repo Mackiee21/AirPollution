@@ -260,6 +260,19 @@ li p{
         display: block;
         text-indent: 10px;
     }
+    #content-title{
+        margin-left: 15px;
+    }
+    #quote{
+        text-indent: 0;
+        margin-top: -10px;
+    }
+    .sub-content-container span{
+        text-indent: 0;
+    }
+    section{
+        margin-bottom: 10px;
+    }
 }
 @media (max-width: 790px){
     body{
