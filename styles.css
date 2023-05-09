@@ -273,6 +273,10 @@ li p{
     section{
         margin-bottom: 10px;
     }
+    .float-img{
+        clear: left;
+        min-width: 100%;
+    }
 }
 @media (max-width: 790px){
     body{
