@@ -556,9 +556,6 @@ li p{
     nav ul{
         width: 100%;
     }
-    #modal{
-        position: absolute !important;
-    }
     .author-container{
         align-items: center;
         position: relative;
