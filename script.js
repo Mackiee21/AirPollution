@@ -32,8 +32,8 @@ window.addEventListener("DOMContentLoaded", () => {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     index = 0;
     displayAuthor(index);
-    if(screen.height > 720){
-        document.getElementsByClassName('sidebar')[0].style.borderRight = "2px solid #0f969c";
+    if(screen.height > 730){
+        document.getElementsByClassName('topic-sidebar')[0].style.borderRight = "2px solid #0f969c";
     }
 })
 links.forEach((link, index) => {
