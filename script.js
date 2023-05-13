@@ -32,7 +32,7 @@ window.addEventListener("DOMContentLoaded", () => {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     index = 0;
     displayAuthor(index);
-    if(screen.height > 620){
+    if(screen.height > 720){
         document.getElementsByClassName('topic-sidebar')[0].style.borderRight = "2px solid #0f969c";
     }
 })
