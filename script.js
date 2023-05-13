@@ -1,66 +1,95 @@
-const infos = [
-    {
-        title: "What is Air Pollution",
-        content: "Air pollution is a type of environmental pollution that affects the air and is usually caused by smoke or other harmful gases, mainly oxides of carbon, Sulphur and nitrogen. In other words, air pollution is the contamination of air due to the presence or introduction of a substance which has a poisonous effect.",
-        img_src: "https://www.gannett-cdn.com/-mm-/b2b05a4ab25f4fca0316459e1c7404c537a89702/c=0-0-1365-768/local/-/media/2018/08/28/USATODAY/usatsports/247WallSt.com-247WS-489035-tangshan-china.jpg?width=3200&height=1680&fit=crop"
-    },
-    {
-        title: "Air Pollution",
-        content: "Air pollution is a type of environmental pollution that affects the air and is usually caused by smoke or other harmful gases, mainly oxides of carbon, Sulphur and nitrogen. In other words, air pollution is the contamination of air due to the presence or introduction of a substance which has a poisonous effect.",
-        img_src: "https://www.gannett-cdn.com/-mm-/b2b05a4ab25f4fca0316459e1c7404c537a89702/c=0-0-1365-768/local/-/media/2018/08/28/USATODAY/usatsports/247WallSt.com-247WS-489035-tangshan-china.jpg?width=3200&height=1680&fit=crop"
-    },
-    {
-        title: "Sources of Air Pollution",
-        content: [
-            "Primary pollutants : Primary pollutants are directly emitted to the atmosphere. Air pollutants may have a natural, anthropogenic or mixed origin, depending on their sources or the sources of their precursors. Key primary air pollutants include particulate matter (PM), black carbon (BC), sulphur oxides (SO2), nitrogen oxides (NOX) (including nitrogen monoxide and nitrogen dioxide, NO2), ammonia (NH), carbon monoxide (CO), methane (CH4), non-methane volatile organic compounds (NMVOCs), including benzene, and certain metals and polycyclic aromatic hydrocarbons, including benzo[a]pyrene (BaP).",
-            "Secondary pollutants : secondary pollutants are formed in the atmosphere from precursor gases through chemical reactions and microphysical processes. Key secondary air pollutants are particulate matter(PM), ozone (O3), NO2and several oxidized volatile organic compounds (VOCs). Key precursor gases for secondary PM are Sulphur dioxide (SO2), NOX, NH3and VOCs. These pollutants and their precursor gases can be of both natural and anthropogenic origin including:",
-            [
-                "burning of fossil fuels in electricity generation, transport, industry and households",
-                "industrial processes and solvent use, for example in the chemical and mining industries",
-                "agriculture",
-                "waste treatment",
-                "natural sources, including volcanic eruptions, windblown dust, sea-salt spray and emissions of volatile organic compounds from plants."
-            ]
-        ]
-    }
-];
-
-const contentPage = document.querySelector("#main-content");
-const title = document.querySelector("#content-title");
-const text = document.querySelector("#content");
-const topic_img = document.querySelector("#img");
+const links = document.querySelectorAll(".topic-sidebar #topic-sb-ul li");
+const sections = document.querySelectorAll("section");
+const authorBtn = document.querySelectorAll("#menu-lists li")[0];
+const refBtn = document.querySelectorAll("#menu-lists li")[1];
+const showDevInfoBtn = document.querySelectorAll("#menu-lists li")[2];
+const menuBtn = document.querySelector("#menu-btn");
+const icon = document.querySelector(".fa");
+const navLists = document.querySelector("#menu-lists");
+const closeModalBtn = document.querySelector("#close-modal-btn");
+const modal = document.querySelector("#modal");
 const prevBtn = document.querySelector("#prev-btn");
 const nextBtn = document.querySelector("#next-btn");
 
-let count = 0;
-window.addEventListener('DOMContentLoaded', () => {
-    ProvideInfo(count);
+const authors = [
+    {
+        name: "Joshua Encabo",
+        email: "encabojoshua0301@gmail.com",
+        number: "09923529909",
+        img_url: "https://scontent.fceb1-2.fna.fbcdn.net/v/t39.30808-6/332130174_869295147635436_1553797012345540329_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeECmUN_wljPwQiitVNJOS5a0aKjqYtm49_RoqOpi2bj3yhUp9alUdAz6lmF6b37U83sufyE7D1NVBcmD5lODpiZ&_nc_ohc=Z2j6Ust8YRwAX_ZDSy9&_nc_ht=scontent.fceb1-2.fna&oh=00_AfCNaPSvlbB4b45vOx8MNA3QFNentTKCH9OCyM03y_F83Q&oe=64641C90"
+    },
+    {
+        name: "Kyle S. Ibarra",
+        email: "ulysseskyleibarra@gmail.",
+        number: "09514505051",
+        img_url: "https://scontent.fceb1-1.fna.fbcdn.net/v/t1.15752-9/346106528_1329101451291351_3749078315365722922_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFvME-x1RcoSk-RlNl-hb-In-1cYxegwtef7VxjF6DC1wpqAZ5D-RTkTxsWrdDXxWKQPQbZ6n2QfytayMbkFO-s&_nc_ohc=-zDjPPC7L9oAX_Gbf1w&_nc_ht=scontent.fceb1-1.fna&oh=03_AdR4thdEisCu0AfFSe_9jq7gPnK6s_gyEBQfjnMNV4DG0w&oe=6486FF6C"
+    }
+];
+
+let index;
+window.addEventListener("DOMContentLoaded", () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    index = 0;
+    displayAuthor(index);
+})
+links.forEach((link, index) => {
+    link.addEventListener('click', () => {
+        let totalHeight = Array.from(sections).reduce((acc, section, i) => {
+            if(i <= index){
+                    return acc + section.clientHeight;
+            }else{
+                return acc;
+            }
+        }, 0);
+       document.body.scrollTop = totalHeight; // For Safari
+    document.documentElement.scrollTop = totalHeight; // For Chrome, Firefox, IE and Opera
+    });
+})
+authorBtn.addEventListener('click', () => {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+});
+refBtn.addEventListener('click', () => {
+        document.body.scrollTop = 8600; // For Safari
+        document.documentElement.scrollTop = 80600; // For Chrome, Firefox, IE and Opera
 });
 
-const ProvideInfo = (index) => {
-    document.documentElement.scrollTop = 0;
-    const topic = infos[index];
-    if(Array.isArray(topic.content)){
-       topic.content.forEach(cont => {
-        const para = document.createElement("p");
-        para.innerText = cont;
-        text.appendChild(para);
-       })
-        
+menuBtn.addEventListener('click', () => {
+    navLists.classList.toggle("hide");
+    if(icon.classList.contains("fa-bars")){
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-close");
     }else{
-        title.innerText = topic.title;
-        topic_img.src = topic.img_src;
-        text.innerText = topic.content;
+        icon.classList.remove("fa-close");
+        icon.classList.add("fa-bars");
     }
-   
-}
+});
 
+showDevInfoBtn.addEventListener('click', () => {
+   modal.style.display = "flex";
+   document.body.style.overflow = "hidden";
+});
+closeModalBtn.addEventListener('click', () => {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+});
+
+const displayAuthor = (index) => {
+    const author = authors[index]
+    document.getElementById("author-img").src = author.img_url;
+    document.getElementById("author-name").innerText = author.name;
+    document.getElementById("author-email").innerText = author.email;
+    document.getElementById("author-number").innerText = author.number;
+}
 nextBtn.addEventListener('click', () => {
-    if((count + 1) === infos.length) count = - 1;
-    ProvideInfo(++count);
+    index++;
+    if(index === authors.length) index = 0;
+    displayAuthor(index);
 });
 
 prevBtn.addEventListener('click', () => {
-    if((count - 1) === 0) count = infos.length;
-    ProvideInfo(--count);
+    index--;
+    if(index === -1) index = authors.length - 1;
+    displayAuthor(index);
 })
