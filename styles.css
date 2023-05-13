@@ -553,6 +553,7 @@ li p{
     }
     nav ul{
         width: 100%;
+        top: 55px;
     }
     .author-container{
         align-items: center;
