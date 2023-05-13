@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Libre+Baskerville&display=swap" rel="stylesheet">
@@ -13,10 +14,13 @@
 <body>
     <nav>
         <h1 class="title">Air Pollution</h1>
-        <ul>
-            <li>Author</li>
+        <div class="menu-container">
+            <button id="menu-btn">Menu<i class="fa fa-bars"></i></button>
+        </div>
+        <ul id="menu-lists">
+            <li>Authors</li>
             <li>References</li>
-            <li>Developer's Info</li>
+            <li>Developers' Info</li>
         </ul>
     </nav>
     <div id="main">
@@ -35,6 +39,45 @@
                 <li>References</li>
             </ul>
         </div>
+        <main>
+            <div id="modal">
+                <div class="author-container">
+                    <button id="prev-btn">Prev</button>
+                    <div id="left-section" class="my-info-container">
+                        <div id="author-photo" class="dev-photo">
+                            <img id="author-img" src="" alt="">
+                        </div>
+                        <p id="author-name"><span>Author: </span></p>
+                        <p id="author-email"><span>Email: </span></p>
+                        <p id="author-number"><span>Contant No:</span></p>
+                        <div id="social-container"></div>
+                    </div>
+                    <button id="next-btn">Next</button>
+                </div>
+                <button id="close-modal-btn">Close Modal</button>
+            </div>
+            <section>
+                <div id="homepage">
+                    <div id="left-section">
+                        <!--<button><i class="fa fa-angle-left"></i></button>-->
+                            <div id="author-photo">
+                                <img src="https://scontent.fceb1-2.fna.fbcdn.net/v/t39.30808-6/332130174_869295147635436_1553797012345540329_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeECmUN_wljPwQiitVNJOS5a0aKjqYtm49_RoqOpi2bj3yhUp9alUdAz6lmF6b37U83sufyE7D1NVBcmD5lODpiZ&_nc_ohc=Z2j6Ust8YRwAX_ZDSy9&_nc_ht=scontent.fceb1-2.fna&oh=00_AfCNaPSvlbB4b45vOx8MNA3QFNentTKCH9OCyM03y_F83Q&oe=64641C90" alt="">
+                            </div>
+                            <p id="author-name"><span>Author: </span>Joshua Encabo</p>
+                            <p><span>Email: </span>encabojoshua0301@gmail.com</p>
+                            <p><span>Contant No:</span>09278102111</p>
+                            <p>May 13, 2023</p>
+                            <div id="social-container"></div>
+                        <!--<button><i class="fa fa-angle-right"></i></button>-->
+                    </div>
+                    <div id="right-section">
+                        <h1>Air Pollution</h1>
+                        <div>
+                            Air pollution consists of chemicals or particles in the air that can harm the health of humans, animals, and plants. It also damages buildings.
+                        </div>
+                    </div>
+                </div>
+            </section>
         <div id="main-content">
             <section>
                 <h1 id="content-title">What is Air Pollution?</h1>
@@ -147,7 +190,7 @@
                     </div>
                 </div>
             </section>
-            <section>
+            <section id="section4">
                 <h1 id="content-title">Effects of Air Pollution</h1>
                 <div id="content">
                     <div class="text coap"><span class="sub-content-title">On the Environment</span>
@@ -176,8 +219,6 @@
                         </div>
                     </div>
                 </div>
-            </section>
-            <section>
                 <h1 id="content-title">Health effects of Air Pollution</h1>
                 <div id="img-div" class="img-mg-bot" >
                     <img id="img" src="https://climate.nasa.gov/internal_resources/2250" alt="an image of the effects of air pollution to our health">
@@ -390,14 +431,36 @@
                     </div>
                 </div>
             </section>
-            <!--
-            <div id="btn-div">
-                <button id="prev-btn">Previous</button>
-                <button id="next-btn">Next</button>
-            </div>
-        -->
+            <section>
+                <h1 id="content-title">References</h1>
+                <div id="content" class="ref">
+                    <ul class="unordered-lists">
+                        <li><span class="list-span">&#8641;</span><a href="https://en.wikipedia.org/wiki/Air_pollution_in_India#:~:text=Of%20the%2030%20most%20polluted,air%20polluti
+                            on%20are%20in%20India." target="_blank">https://en.wikipedia.org/wiki/Air_pollution_in_India#:~:text=Of%20the%2030%20most%20polluted,air%20polluti
+                            on%20are%20in%20India.</a></li>
+                            <li><span class="list-span">&#8641;</span><a href="https://en.wikipedia.org/wiki/Air_pollution" target="_blank">https://en.wikipedia.org/wiki/Air_pollution</a></li>
+                            <li><span class="list-span">&#8641;</span><a href="https://www.nrdc.org/stories/air-pollution-everything-you-need-know" target="_blank">https://www.nrdc.org/stories/air-pollution-everything-you-need-know</a></li>
+                            <li><span class="list-span">&#8641;</span><a href="https://solarimpulse.com/air-pollution-solutions?utm_term=air%20pollution&utm_campaign=Solutions&utm_source
+                                =adwords&utm_medium=ppc&hsa_acc=1409680977&hsa_cam=11451944566&hsa_grp=117528789968&hsa_ad=4
+                                74951698877&hsa_src=g&hsa_tgt=kwd-10746156&hsa_kw=air%20pollution&hsa_mt=b&hsa_net=adwords&hsa_v
+                                er=3&gclid=Cj0KCQjwheyUBhD-ARIsAHJNM-MVwixJwuYa3IiNRqM0ofQPXLwTMrnW4iINYhinXHTlxnl7ayv
+                                -4bkaAmpaEALw_wcB" target="_blank">https://solarimpulse.com/air-pollution-solutions?utm_term=air%20pollution&utm_campaign=Solutions&utm_source
+                                =adwords&utm_medium=ppc&hsa_acc=1409680977&hsa_cam=11451944566&hsa_grp=117528789968&hsa_ad=4
+                                74951698877&hsa_src=g&hsa_tgt=kwd-10746156&hsa_kw=air%20pollution&hsa_mt=b&hsa_net=adwords&hsa_v
+                                er=3&gclid=Cj0KCQjwheyUBhD-ARIsAHJNM-MVwixJwuYa3IiNRqM0ofQPXLwTMrnW4iINYhinXHTlxnl7ayv
+                                -4bkaAmpaEALw_wcB
+                                </a></li>
+                            <li><span class="list-span">&#8641;</span><a href="https://pixabay.com/images/search/thinking/" target="_blank">https://pixabay.com/images/search/thinking/</a>
+                            </li>
+                    </ul>
+                </div>
+            </section>
         </div>
+        </main>
     </div>
-    <!--<script src="script.js"></script>-->
+    <footer>
+        
+    </footer>
+   <script src="script.js"></script>
 </body>
 </html>
