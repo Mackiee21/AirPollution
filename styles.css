@@ -316,6 +316,7 @@ li p{
     margin-bottom: 20px;
 }
 .my-info-container{
+    max-width: 370x;
     width: 30% !important;
     border: 2px solid black;
     margin-bottom: 30px;
