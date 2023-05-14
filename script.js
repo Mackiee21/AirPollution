@@ -31,14 +31,21 @@ window.addEventListener("DOMContentLoaded", () => {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     index = 0;
+    //adding the active design to the first li as soon as the page loads
+    links[0].classList.add('active');
     displayAuthor(index);
     if(screen.height > 720){
-        document.getElementsByClassName('topic-sidebar')[0].style.borderRight = "2px solid #0f969c";
-         document.getElementsByClassName('topic-sidebar')[0].style.paddingRight = "0";
+        document.getElementsByClassName('topic-sidebar')[0].style.borderRight = "5px solid #0f969c";
     }
 })
 links.forEach((link, index) => {
     link.addEventListener('click', () => {
+         //remove the active design
+        links.forEach(link => {
+            link.classList.remove('active');
+        });
+        //add the active design to the clicked li element
+        link.classList.add('active');
         let totalHeight = Array.from(sections).reduce((acc, section, i) => {
             if(i <= index){
                     return acc + section.clientHeight;
